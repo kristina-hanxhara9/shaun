@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaun's Plumbing & Drainage | YOUR LOCAL PLUMBER & DRAINAGE COMPANY</title>
+    <style>
+        :root {
+            --primary: #ff6600;
+            --primary-dark: #d65600;
+            --secondary: #003366;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --dark: #222222;
+            --gray: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.5;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+        
+        .btn-call {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-call:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            padding: 150px 0 100px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+        
+        .hero-discount {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 30px;
+            display: block;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .section-header h2 span {
+            color: var(--primary);
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            text-align: center;
+            background-color: var(--light);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            z-index: -1;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            color: var(--white);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover h3 {
+            color: var(--white);
+        }
+        
+        .service-card i {
+            font-size: 60px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover i {
+            color: var(--white);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover p {
+            color: var(--white);
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+        
+        .why-us .section-header h2 {
+            color: var(--white);
+        }
+        
+        .why-us .section-header p {
+            color: #aaa;
+        }
+        
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .why-us-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .why-us-card:hover {
+            background-color: var(--primary);
+            transform: translateY(-10px);
+        }
+        
+        .why-us-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .why-us-card:hover i {
+            color: var(--white);
+        }
+        
+        .why-us-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .why-us-card p {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+        
+        .why-us-card:hover p {
+            color: var(--white);
+        }
+        
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: var(--white);
+        }
+        
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta .btn {
+            margin: 0 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 80px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: var(--primary);
+            opacity: 0.2;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .testimonial-stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            text-transform: uppercase;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            color: var(--primary);
+            font-size: 24px;
+            margin-right: 20px;
+        }
+        
+        .contact-details h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .contact-details p, .contact-details a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .contact-form h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            text-transform: uppercase;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            padding: 12px 25px;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding-top: 70px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding-bottom: 50px;
+        }
+        
+        .footer-widget h4 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-widget p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact i {
+            width: 30px;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(0,0,0,0.2);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                flex-direction: column;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .section-header h2 {
+                font-size: 36px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section-header h2 {
+                font-size: 30px;
+            }
+            
+            .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Emergency Banner */
+        .emergency-banner {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        .emergency-banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .emergency-banner i {
+            font-size: 24px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .emergency-banner p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .emergency-banner a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        
+        .emergency-banner a:hover {
+            color: var(--secondary);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container emergency-banner-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>PLUMBING EMERGENCY? CALL NOW!</p>
+            <a href="tel:07961356146">07961356146</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="/api/placeholder/60/60" alt="Shaun's Plumbing & Drainage Logo">
+                <div class="logo-text">Shaun's <span>Plumbing</span></div>
+            </a>
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:07961356146" class="btn btn-call"><i class="fas fa-phone"></i> CALL NOW!</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Your Local <span>Plumbing & Drainage</span> Experts</h1>
+            <p>Fast, reliable service for all your plumbing and drainage needs. No job too big or small!</p>
+            <span class="hero-discount">5% DISCOUNT FOR OAP's - CALL NOW!</span>
+            <div class="hero-buttons">
+                <a href="tel:07961356146" class="btn"><i class="fas fa-phone"></i> 07961 356 146</a>
+                <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p>We provide professional plumbing and drainage services for residential and commercial properties.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-toilet"></i>
+                    <h3>Blocked Toilets</h3>
+                    <p>Quick and effective solutions for blocked toilets, restoring proper function to your bathroom.</p>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-sink"></i>
+                    <h3>Blocked Sinks</h3>
+                    <p>Clearing blocked sinks and basins in kitchens and bathrooms to keep your water flowing smoothly.</p>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shower"></i>
+                    <h3>Shower Repairs</h3>
+                    <p>Expert repairs and maintenance for all types of showers to ensure proper function and water pressure.</p>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Dripping Taps</h3>
+                    <p>Fix leaky and dripping taps to prevent water waste and potential damage to your property.</p>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Leak Detection</h3>
+                    <p>Advanced techniques to locate and repair hidden leaks in your plumbing system.</p>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>General Plumbing</h3>
+                    <p>Comprehensive plumbing services for all your maintenance, repair, and installation needs.</p>
+                    <a href="#contact" class="btn btn-outline">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why <span>Choose Us</span></h2>
+                <p>Our commitment to quality and customer satisfaction sets us apart from the competition.</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <i class="fas fa-stopwatch"></i>
+                    <h3>Fast Response</h3>
+                    <p>We understand the urgency of plumbing problems and aim to respond quickly to all service calls.</p>
+                </div>
+                <div class="why-us-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Professional Service</h3>
+                    <p>Our friendly, experienced team provides high-quality workmanship and excellent customer service.</p>
+                </div>
+                <div class="why-us-card">
+                    <i class="fas fa-pound-sign"></i>
+                    <h3>Fair Pricing</h3>
+                    <p>Competitive rates with no hidden fees or surprise charges. We provide clear, upfront pricing.</p>
+                </div>
+                <div class="why-us-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Experienced Team</h3>
+                    <p>Years of experience solving complex plumbing and drainage problems for local customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Need Emergency Plumbing Services?</h2>
+            <p>Don't wait! Call us now for fast, reliable service to solve your plumbing and drainage problems.</p>
+            <div>
+                <a href="tel:07961356146" class="btn">Call 07961 356 146</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our <span>Customers Say</span></h2>
+                <p>We pride ourselves on delivering excellent service and creating happy customers.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Excellent service! Shaun arrived quickly and fixed our blocked toilet without any fuss. Very professional and friendly. Would definitely recommend.</p>
+                    <p class="testimonial-author">- Sarah T., Harrow</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Great job fixing our leaking sink. Arrived on time, explained the problem clearly, and completed the repair efficiently. Fair price too!</p>
+                    <p class="testimonial-author">- James W., Northolt</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">I called Shaun for an emergency blocked drain. He responded quickly and sorted the problem in no time. Excellent service and very reasonable rates.</p>
+                    <p class="testimonial-author">- David P., Harrow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact <span>Us</span></h2>
+                <p>Get in touch for all your plumbing and drainage needs. We're here to help!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Address</h4>
+                            <p>111 Stanley Rd, Harrow, HA2 8AY</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Number</h4>
+                            <a href="tel:07961356146">07961 356 146</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <a href="mailto:info@shaunsplumbing.co.uk">info@shaunsplumbing.co.uk</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 4:00 PM</p>
+                            <p>Sunday: Emergency Call Outs Only</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Special Offer</h4>
+                            <p>5% discount for OAP's - Call Now!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" selected disabled>Select Service</option>
+                                <option value="Blocked Toilet">Blocked Toilet</option>
+                                <option value="Blocked Sink">Blocked Sink</option>
+                                <option value="Dripping Tap">Dripping Tap</option>
+                                <option value="Leak Detection">Leak Detection</option>
+                                <option value="Shower Repair">Shower Repair</option>
+                                <option value="General Plumbing">General Plumbing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4>About Us</h4>
+                    <p>Shaun's Plumbing & Drainage is your local, professional plumbing company providing fast, reliable service for all your plumbing and drainage needs.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> Services</a></li>
+                        <li><a href="#why-us"><i class="fas fa-angle-right"></i> Why Choose Us</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-angle-right"></i> Testimonials</a></li>
+                        <li><a href="#contact"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Blocked Toilets</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Blocked Sinks</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Dripping Taps</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Leak Detection</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Shower Repairs</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> General Plumbing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 111 Stanley Rd, Harrow, HA2 8AY</p>
+                    <p><i class="fas fa-phone"></i> 07961 356 146</p>
+                    <p><i class="fas fa-envelope"></i> info@shaunsplumbing.co.uk</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8am-6pm, Sat: 9am-4pm</p>
+                    <p><i class="fas fa-tag"></i> 5% discount for OAP's</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Shaun's Plumbing & Drainage. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
